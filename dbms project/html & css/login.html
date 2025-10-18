@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="login-logo">
+      <img src="nsut.logo.png" />
+    </div>
+    <h1>Welcome to NSUT Alumni</h1>
+    <form>
+      <label for="roll">Roll Number:</label>
+      <input type="text" id="roll" name="roll" /><br /><br />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" /><br /><br />
+
+      <button class="login-btn" type="submit">Login</button>
+    </form>
+
+    <footer>
+      <p>&copy; 2025 NSUT Alumni Portal | All Rights Reserved</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> |
+        <a href="#">Contact</a>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<!--login button to homepage-->
+<script>
+  const form = document.querySelector('form');
+
+  // Listen for the submit event
+  form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent the default form reload
+
+    const roll = document.getElementById('roll').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    // Basic validation
+    if (roll === "" || password === "") {
+      alert("Please enter both Roll Number and Password!");
+      return;
+    }
+
+    // You can add real login logic here (e.g., API or database check)
+    // For now, just redirect to homepage
+    window.location.href = "homepage.html";
+  });
+</script>
